@@ -18,13 +18,13 @@ var prices = {
 //contract,name,url,weight,yield
 var pools = [
     ["0xcfc378f8422ad253c3dadfe636fc3a6fc6611fcb", "UNISWAP YFF/ETH", "https://uniswap.info/pair/0xcfc378f8422ad253c3dadfe636fc3a6fc6611fcb", 5, 0, 0],
-    ["0x6d37eb2364f8bb28002bd404cf301fa8106dcb14", "SUSHISWAP NYAN/USDT", "https://sushiswap.vision/pair/0x6d37eb2364f8bb28002bd404cf301fa8106dcb14", 3, 0, 0],
-    ["0x795065dcc9f64b5614c407a6efdc400da6221fb0", "SUSHISWAP SUSHI/ETH", "https://sushiswap.vision/pair/0x795065dcc9f64b5614c407a6efdc400da6221fb0", 1, 0, 0],
-    ["0x06da0fd433c1a5d7a4faa01111c044910a184553", "SUSHISWAP ETH/USDT", "https://sushiswap.vision/pair/0x06da0fd433c1a5d7a4faa01111c044910a184553", 1, 0, 0],
-    ["0xd86a120a06255df8d4e2248ab04d4267e23adfaa", "SUSHISWAP USDC/USDT", "https://sushiswap.vision/pair/0xd86a120a06255df8d4e2248ab04d4267e23adfaa", 1, 0, 0],
-    ["0x397ff1542f962076d0bfe58ea045ffa2d347aca0", "SUSHISWAP USDC/ETH", "https://sushiswap.vision/pair/0x397ff1542f962076d0bfe58ea045ffa2d347aca0", 1, 0, 0],
-    ["0x055cedfe14bce33f985c41d9a1934b7654611aac", "SUSHISWAP DAI/USDT", "https://sushiswap.vision/pair/0x055cedfe14bce33f985c41d9a1934b7654611aac", 1, 0, 0],
-    ["0xc3d03e4f041fd4cd388c549ee2a29a9e5075882f", "SUSHISWAP DAI/ETH", "https://sushiswap.vision/pair/0xc3d03e4f041fd4cd388c549ee2a29a9e5075882f", 1, 0, 0]
+    ["0x6d37eb2364f8bb28002bd404cf301fa8106dcb14", "UNISWAP NYAN/USDT", "https://uniswap.info/pair/0x6d37eb2364f8bb28002bd404cf301fa8106dcb14", 3, 0, 0],
+    ["0xce84867c3c02b05dc570d0135103d3fb9cc19433", "UNISWAP SUSHI/ETH", "https://uniswap.info/pair/0xce84867c3c02b05dc570d0135103d3fb9cc19433", 1, 0, 0],
+    ["0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852", "UNISWAP ETH/USDT", "https://uniswap.info/pair/0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852", 1, 0, 0],
+    ["0x3041cbd36888becc7bbcbc0045e3b1f144466f5f", "UNISWAP USDC/USDT", "https://uniswap.info/pair/0x3041cbd36888becc7bbcbc0045e3b1f144466f5f", 1, 0, 0],
+    ["0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc", "UNISWAP USDC/ETH", "https://uniswap.info/pair/0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc", 1, 0, 0],
+    ["0xb20bd5d04be54f870d5c0d3ca85d82b34b836405", "UNISWAP DAI/USDT", "https://uniswap.info/pair/0xb20bd5d04be54f870d5c0d3ca85d82b34b836405", 1, 0, 0],
+    ["0xa478c2975ab1ea89e8196811f51a7b7ade33eb11", "UNISWAP DAI/ETH", "https://uniswap.info/pair/0xa478c2975ab1ea89e8196811f51a7b7ade33eb11", 1, 0, 0]
 ];
 
 var loadedpools = 0;
@@ -309,7 +309,7 @@ function removeFromPool() {
         });
 }
 
-function getSushiSwapPrice() {
+function getUNISWAPPrice() {
     var ctx0 = new web3.eth.Contract(uniswapABI, pools[0][0]); // nyancat-eth
     var ctx1 = new web3.eth.Contract(uniswapABI, pools[3][0]); // usdc-eth
     var ctx2 = new web3.eth.Contract(uniswapABI, pools[1][0]); // nyancat-usdt
@@ -385,7 +385,7 @@ Number.prototype.toFixedSpecial = function(n) {
 
     return str;
 };
-getSushiSwapPrice();
+getUNISWAPPrice();
 
 setInterval(function() {
     initpooldata(currentPagePoolID);
