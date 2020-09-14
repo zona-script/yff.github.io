@@ -2,7 +2,7 @@
 var ethconnected = false;
 var ethaddress = "0x";
 var balance = 0;
-var web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io/v3/ee0c9f94261149ab92eefdecbef45d28'));
+var web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io/v3/19604bf9e7ba42f38c88e2b167736ddb'));
 var cattowerAddress = "0x3009D5D3d5740a018588Cd98A4a2b66754673c48"; // cattower
 var yffAddress = "0x58B92d7C176ccF1951CcAda2c1920A44b7441233"; // YFF Finance
 var currentPageToken = "0x";
