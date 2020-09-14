@@ -20,7 +20,7 @@ let tokenValue = {
 };
 const timeReloadData = 45;
 const usdtAddress = "0xdac17f958d2ee523a2206206994597c13d831ec7";
-const chain = "mainnet";
+const chain = "ropsten";
 const config = {
     ropsten: {
         provider: "https://ropsten.infura.io/v3/19604bf9e7ba42f38c88e2b167736ddb",
